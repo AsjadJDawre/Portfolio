@@ -1,0 +1,8 @@
+.layout-even {
+    flex-direction: row;
+  }
+  
+  .layout-odd {
+    flex-direction: row-reverse;
+  }
+  
