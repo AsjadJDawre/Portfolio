@@ -41,6 +41,7 @@ const ProjectCard = ({
       {/* Image Section */}
       <a
         href={link}
+        target='_blank'
         className="flex w-full relative justify-center sm:justify-start group"
       >
         <div className={`flex flex-col items-center relative ${layoutClass === 'layout-odd' ? 'ml-[5rem]' : ''}`}>

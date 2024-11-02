@@ -34,7 +34,7 @@ function Hero_section({onButtonClick,onButtonClick2,showAboutMe}) {
     Asjad Dawre
   </h1>
   <p className='font-["Merriweather"] italic mb-6 sm:mb-8 md:mb-10'>
-    Mern Stack Developer
+    FULL Stack Developer
   </p>
   <button onClick={onButtonClick2} className='bg-[#4595eb] animate-pulse font-extrabold  hover:scale-110 ease-in-out duration-100  group relative bg-gradient-to-r from-[#1595b6] to-[#1f2667e6] py-2 px-5 rounded font-["Spartan"]'>
     About Me 
