@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
 import ProjectCard from '../Project_Card/ProjectCard';
 import volunteerHubImage from "../../assets/images/volunteer-hub.png";
+import eGramPanchayatImage from "../../assets/images/eGramPanchayatImage.png";
+import refillBuddyImage from "../../assets/images/refillBuddyImage.png";
 import TodoNest from "../../assets/images/TodoNest.png";
 import Expensetracker from "../../assets/images/Expensetracker.png";
 import AcademiaSuite from "../../assets/images/AcademiaSuite.png";
@@ -8,16 +10,19 @@ import AcademiaSuite from "../../assets/images/AcademiaSuite.png";
 const Project_show = forwardRef((props, ref) => {
   const projects = [
     {
-      title: 'Volunteer Hub for NSS',
-      subtitle: '(Management Solution)',
-      description: 'Developed a comprehensive web solution for managing NSS activities, including event scheduling, volunteer tracking, and reporting. Led a team of three developers, overseeing frontend and backend development.',
-      imageSrc:volunteerHubImage,
-      imageAlt: 'Volunteer Hub for NSS',
-      link: 'https://www.linkedin.com/in/asjad-johar/', 
-      tags: ['HTML', 'CSS', 'Tailwind','PHP', 'MySQL'],
-      themeColor: '#47afa1',
-      themeAccentColor: '#1788ae'
+      title: 'E-Gram Panchayat',
+      subtitle: '(Digital Village Administration Solution)',
+      description: 'Developed a web-based platform to digitize village administration workflows, allowing users to apply for Birth Certificates, NOCs, and Household Applications. Implemented role-based access control for users, staff, and admins, along with dynamic PDF certificate generation.',
+      // important: "use asjaddawre2@gmail.com for administrator login",
+      imageSrc: eGramPanchayatImage,
+      imageAlt: 'E-Gram Panchayat Digital Solution',
+      link: 'https://e-grampanchayat.onrender.com',
+      tags: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Express.js', 'pdf-lib'],
+      themeColor: '#2E86C1',
+      themeAccentColor: '#1A5276'
     },
+    
+  
     {
       title: 'AcademiaSuite',
       subtitle: '(Desktop Application)',
@@ -26,6 +31,30 @@ const Project_show = forwardRef((props, ref) => {
       imageAlt: 'AcademiaSuite',
       link: 'https://github.com/AsjadJDawre/AcademiaSuite', 
       tags: ['React', 'Electron', 'JavaScript','MySQL-Lite'],
+      themeColor: '#47afa1',
+      themeAccentColor: '#1788ae'
+    },
+    
+    {
+      title: 'Refill Buddy',
+      subtitle: '(Gas Cylinder Refill Management System)',
+      description: 'Developed a web application to streamline gas cylinder refill bookings, integrating features such as secure authentication, quota tracking, payment gateway (Razorpay), and admin tools for request approvals and notices. Implemented a user-friendly dashboard for booking history and real-time status tracking.',
+      imageSrc: refillBuddyImage,
+      imageAlt: 'Refill Buddy - Gas Cylinder Refill Management',
+      link: 'https://frontend-rb.onrender.com', 
+      tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay'],
+      themeColor: '#ff9800',
+      themeAccentColor: '#f57c00'
+    }
+,    
+    {
+      title: 'Volunteer Hub for NSS',
+      subtitle: '(Management Solution)',
+      description: 'Developed a comprehensive web solution for managing NSS activities, including event scheduling, volunteer tracking, and reporting. Led a team of three developers, overseeing frontend and backend development.',
+      imageSrc:volunteerHubImage,
+      imageAlt: 'Volunteer Hub for NSS',
+      link: 'https://www.linkedin.com/in/asjad-johar/', 
+      tags: ['HTML', 'CSS', 'Tailwind','PHP', 'MySQL'],
       themeColor: '#47afa1',
       themeAccentColor: '#1788ae'
     },
