@@ -3,18 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A portfolio website for Asjad Johar Dawre">
-  <title>Asjad's Portfolio</title>
-  <link rel="stylesheet" href="./src/App.css">
-  <link rel="icon" href="/public/ASjad-dav.png" type="image/x-icon" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Asjad Johar Dawre - Full Stack Developer specializing in PERN stack (PostgreSQL, Express, React, Node). Explore my projects and skills.">
+  <meta name="keywords" content="Asjad Johar, Full Stack Developer, React, Node.js, Portfolio, JavaScript, Web Development">
+  <meta name="author" content="Asjad Johar Dawre">
+  <meta name="robots" content="index, follow">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:title" content="Asjad Johar Dawre - Full Stack Developer">
+  <meta property="og:description" content="Check out my portfolio showcasing React, Node.js, and Full Stack projects.">
+  <meta property="og:image" content="https://asjad-dev.vercel.app/assets/portfolio-image.jpg">
+  <meta property="og:url" content="https://asjad-dev.vercel.app/">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Asjad Johar Dawre - Full Stack Developer</title>
+
+  <!-- Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Asjad Johar Dawre",
+    "jobTitle": "Full Stack Developer",
+    "url": "https://asjad-dev.vercel.app/",
+    "image": "https://asjad-dev.vercel.app/name-logo-white.svg",
+    "description": "Asjad Johar Dawre - Full Stack Developer specializing in PERN stack (PostgreSQL, Express, React, Node). Explore my projects and skills.",
+    "sameAs": [
+      "https://github.com/AsjadJDawre",
+      "https://www.linkedin.com/in/asjad-johar"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance",
+      "url": "https://asjad-dev.vercel.app/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "G.M. Vedak Institute of Technology",
+      "url": "https://www.gmvedakcollege.com"
+    }
+  }
+  </script>
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="K6DtoWiXK3_qiqEuom-YspDZvsWsxe86hqmhaeXAIQQ">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/ASjad-dav.png" type="image/x-icon" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./App.css">
+
+  <!-- JavaScript Libraries (Remove if unnecessary) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="/scripts.js" defer></script>
 </head>
 <body>
   <div id="root"></div>
-    <script type="module" src="./src/main.jsx"></script>
-  </body>
+  <script type="module" src="./src/main.jsx"></script>
+</body>
 </html>
