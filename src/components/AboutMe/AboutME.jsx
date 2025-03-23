@@ -1,52 +1,25 @@
-
-
 import React from 'react';
 import Coder from '../Coder/Coder';
-// import '../../AboutMe.css'
+import '../../AboutMe.css';
 
-const AboutMe = ({closebtn}) => {
+const AboutMe = ({ closebtn }) => {
   const skills = [
-    "#react.js",
-    "#redux",
-    "#node.js",
-    "#express.js",
-    "#mongoDB",
-    "#mongoose",
-    "#cloudinary",
-    "#ejs",
-    "#JavaScript",
-    "#html",
-    "#css",
-    "#bootstrap",
-    "#tailwind",
-    "#git",
-    "#github",
-    "#PostgreSQL",
-    "SQL",
+    "#react.js", "#redux", "#node.js", "#express.js", "#mongoDB", "#mongoose", 
+    "#cloudinary", "#ejs", "#JavaScript", "#html", "#css", "#bootstrap", 
+    "#tailwind", "#git", "#github", "#PostgreSQL", "SQL"
   ];
 
   return (
-    <>
-    <div
-      style={{ boxShadow: '0px 0px 8px rgba(255, 140, 0, 1)' }}
-      className="Pop-up relative z-80 max-w-[35rem] mt-[38px] mx-[200px] my-8 bg-[#111] rounded-lg shadow-lg"
-    >
-      {/* Parent Box */}
-      <div className="flex relative z-80">
-        {/* Left Box */}
-        <div className="flex-1 p-6   box-content absolute w-[150vh] ml-[-16%]  border-2 border-[#1788ae] rounded-lg shadow-lg">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-[#1788ae]">ABOUT ME</h2>
-          </div>
-  
-  
-          {/* Flex container for horizontal alignment */}
-          <div className="flex flex-wrap gap-4">
-            
-            {/* Column 1 */}
-            <div className="flex-1">
+    <div className="about-me-container">
+      <div className="pop-up">
+        <div className="flex-container">
+          <div className="left-box">
+            <div className="header">
+              <h2>ABOUT ME</h2>
+            </div>
+            <div className="content">
               <p>
-                <strong>I'm Asjad Johar Dawre</strong>, a final-year B.E. Computer Engineering student from the University of Mumbai,
+                <strong>I'm Asjad Johar Dawre</strong>, a final-year B.E. Computer Engineering student from <br/>The University of Mumbai,
                 passionate about full-stack web development.
               </p>
               <ul>
@@ -54,48 +27,27 @@ const AboutMe = ({closebtn}) => {
                 <li><strong>Portfolio:</strong> Showcases my expertise in <u>responsive, user-friendly applications</u>.</li>
                 <li><strong>Problem-Solving:</strong> I thrive on solving complex challenges with clean code.</li>
               </ul>
-              
             </div>
-  
-            {/* Column 2 */}
-            <div className="flex-1 ">
-            {/* <div className="coderImage absolute  mt-[500px]  ">
-      <Coder />
-      </div> */}
-            <div className="  bg-[#111]  shadow-lg max-w-lg p-4" >
-        <button
-      onClick={closebtn}
-      className="absolute top-2 right-2 p-2 bg-gray-800 text-white rounded-full shadow-lg  hover:scale-125 duration-500"
-      style={{ boxShadow: '0px 0px 8px rgba(30, 144, 255, 1)' }}  >
-        <div className="cross transition-transform transform hover:rotate-180">
-
-
-      X
-        </div>
-    </button>
-    
-    </div>
-   
-              <p className=' mt-[25%] absolute'>
-                <strong>Driven by curiosity</strong>, I believe in pushing technology's limits to make a lasting impact. 
-                <br/><strong>"Code with purpose, build with vision."</strong> Curious about what’s next?
-              </p>
-              <ul className="flex flex-wrap mt-[-5%] mr-8 absolute gap-2 mb-4 text-white">
-                {skills.map((skill, index) => (
-                  <li key={index} className="border border-[#444] rounded-2xl px-3 py-1">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            
-            </div>
-            
           </div>
-  
-  
-          {/* MERN Stack logos */}
-          <div>
+          <div className="right-box">
+            <button onClick={closebtn} className="close-btn slideUp">X</button>
+            <p className="slogan">
+              <strong>Driven by curiosity</strong>, I believe in pushing technology's limits to make a lasting impact.
+              <br />
+              <strong>"Code with purpose, build with vision."</strong> Curious about what’s next?
+            </p>
+            <ul className="skills-list">
+              {skills.map((skill, index) => (
+                <li key={index} className="skill-item">{skill}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="mern-stack">
             <h2 className="text-xl font-semibold text-[#1788ae] mb-2">MERN STACK</h2>
+          <div className="stack-icons">
+ {/* MERN Stack logos */}
+ <div>
             <div className="flex gap-4">
               <div className="flex flex-col items-center">
                 <div className="bg-green-600 text-white p-3 rounded-full shadow-md mb-2">
@@ -172,17 +124,11 @@ const AboutMe = ({closebtn}) => {
                 <h2 className="text-[#ffc107] text-lg font-bold">N</h2>
               </div>
             </div>
-          </div>
-      
+          </div>          </div>
         </div>
       </div>
-      
     </div>
-      
-      </>
   );
-  
 };
 
 export default AboutMe;
-

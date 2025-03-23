@@ -21,4 +21,23 @@ canvas {
     position: relative;
     z-index: 1;
   }
+    /* Media queries for responsive canvas */
+@media (max-width: 1024px) {
+  .hero-canvas {
+    height: 90%; /* Adjust height for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-canvas {
+    height: 80%; /* Adjust height for smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-canvas {
+    height: 70%; /* Adjust height for mobile devices */
+  }
+}
+
   

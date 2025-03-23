@@ -91,7 +91,7 @@ const Project_show = forwardRef((props, ref) => {
       </h2>
       
       {/* Vertical Line from Latest Work Header */}
-      <div className="absolute top-[70px] left-1/2 transform -translate-x-1/2 w-[1px] h-[98.1%] bg-[#ccc] z-0"></div>
+      <div className="absolute hidden sm:block top-[70px] left-1/2 transform -translate-x-1/2 w-[1px] h-[98.1%] bg-[#ccc] z-0"></div>
 
       {/* Project Cards */}
       <div className="relative z-10">

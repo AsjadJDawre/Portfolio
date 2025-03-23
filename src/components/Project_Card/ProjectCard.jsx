@@ -16,10 +16,18 @@ const ProjectCard = ({
   const layoutClass = index % 2 === 0 ? 'layout-even' : 'layout-odd';
 
   return (
-    <div className={`relative flex flex-col ${layoutClass === 'layout-even' ? 'sm:flex-row' : 'sm:flex-row-reverse'} gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 px-4 sm:px-8`}>
+    <div className={`   relative  flex flex-col ${layoutClass === 'layout-even' ? 'sm:flex-row' : 'sm:flex-row-reverse'} gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 px-4 sm:px-8`}>
       {/* Horizontal Line from Image */}
+            {/* Vertical Line (Add New Block Here) */}
+<div
+  className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-0 bottom-0 w-[1px] z-0`}
+  style={{
+    backgroundColor: themeAccentColor, // Vertical line color
+    transform: layoutClass === 'layout-even' ? 'translateX(-50%)' : 'translateX(50%)',
+  }}
+></div>
       <div
-        className={`absolute ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 h-[1px] z-0`}
+        className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 h-[1px] z-0`}
         style={{
           backgroundColor: themeAccentColor,  // Use inline style for dynamic background color
           width: 'calc(35% - 3rem)',
@@ -29,9 +37,11 @@ const ProjectCard = ({
         }}
       ></div>
 
+
+
       {/* Separator Dot */}
       <div
-        className={`absolute ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-[#111] z-10 hover:scale-110 ease-in-out duration-100`}
+        className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-[#111] z-10 hover:scale-110 ease-in-out duration-100`}
         style={{
           border: `3px solid ${themeColor}`, 
           transform: layoutClass === 'layout-even' ? 'translateX(-50%) translateY(-50%)' : 'translateX(50%) translateY(-50%)'
@@ -41,8 +51,8 @@ const ProjectCard = ({
       {/* Image Section */}
       <a
         href={link}
-        target='_blank'
         className="flex w-full relative justify-center sm:justify-start group"
+        target="_blank"
       >
         <div className={`flex flex-col items-center relative ${layoutClass === 'layout-odd' ? 'ml-[5rem]' : ''}`}>
           <div className="relative w-full max-w-[400px] p-4 group-hover:scale-105 transition-transform duration-200 ease-in-out">

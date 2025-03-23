@@ -93,15 +93,19 @@ const MatterAnimation = () => {
 
     // Resize event to adapt to container size
     const handleResize = () => {
-      render.options.width = container.clientWidth;
-      render.options.height = container.clientHeight;
+      const { width, height } = container.getBoundingClientRect();
+      render.canvas.width = width;
+      render.canvas.height = height;
+      render.options.width = width;
+      render.options.height = height;
       Render.lookAt(render, {
         min: { x: 0, y: 0 },
-        max: { x: container.clientWidth, y: container.clientHeight },
+        max: { x: width, y: height },
       });
     };
 
     window.addEventListener('resize', handleResize);
+    handleResize(); // Initial resize
 
     // Cleanup on component unmount
     return () => {
@@ -120,16 +124,14 @@ const MatterAnimation = () => {
       ref={containerRef}
       style={{
         width: '100%',
-        height:  '100vh',
+        height: '100vh',
         position: 'relative',
         overflow: 'hidden',
-        // zIndex: -1,
       }}
     >
       <canvas ref={canvasRef} />
     </div>
   );
-  
 };
 
 export default MatterAnimation;
