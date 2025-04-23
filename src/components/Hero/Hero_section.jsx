@@ -1,8 +1,9 @@
+import { Suspense,lazy } from 'react';
 import React, { useState,useEffect } from 'react';
 import Name_Logo from '../Name_logo/Name_Logo';
 import '../../Hero_section.css'
 import AboutMe from '../AboutMe/AboutME'
-import MatterAnimation from '../../MatterAnimation.jsx';
+  const MatterAnimation= lazy(() => import ('../../MatterAnimation.jsx'));
 
 function Hero_section({onButtonClick,onButtonClick2,showAboutMe}) {
  
@@ -23,7 +24,10 @@ function Hero_section({onButtonClick,onButtonClick2,showAboutMe}) {
       >     
 
 <div className="absolute inset-0" style={{ zIndex: -1 }}>
+  <Suspense fallback={null}>
+
           <MatterAnimation />
+  </Suspense>
         </div>
 
         <div className=' max-w-screen-xl  mx-auto w-full font-["Nunito"]'>
