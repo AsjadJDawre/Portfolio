@@ -1,10 +1,10 @@
 import React from 'react'
 import NameWhiteLogo from '../name-white-logo/NameWhiteLogo '
 import PhoneLogo from '../Phone/PhoneLogo'
-
+import {toast,Toaster} from 'react-hot-toast'
 function Header({onButtonClick3,}) {
   const handleWhatsappClick = () => {
-    alert('Coming Soon!')
+    toast.success('Coming Soon!',{position: 'top-center'});
     
   }
   return (

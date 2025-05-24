@@ -1,8 +1,9 @@
 import React from 'react';
 import Coder from '../Coder/Coder';
 import '../../AboutMe.css';
+import { memo } from 'react';
 
-const AboutMe = ({ closebtn }) => {
+const AboutMe = memo(({ closebtn }) => {
   const skills = [
     "#react.js", "#redux", "#node.js", "#express.js","typescript", "#mongoDB", "#mongoose", 
     "#cloudinary", "#ejs", "#JavaScript", "#html", "#css", "#bootstrap", 
@@ -101,6 +102,6 @@ const AboutMe = ({ closebtn }) => {
       </div>
     </div>
   );
-};
+});
 
 export default AboutMe;

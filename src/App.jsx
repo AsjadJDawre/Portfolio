@@ -8,8 +8,7 @@ import ContactSection from './components/ContactSection/ContactSection';
 import Footer from './Footer/Footer';
 import AboutMe from './components/AboutMe/AboutME';
 // import Test from './components/AboutMe/test';
-import PhoneLogo from './components/Phone/PhoneLogo';
-import MatterAnimation from './MatterAnimation.jsx'; 
+
 function App() {
   const contactRef = useRef(null);
   const contactRef2 = useRef(null);

@@ -54,7 +54,7 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/asjad_johar" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/Asjad_00" target="_blank" rel="noopener noreferrer">
             <svg
               className="w-5 hover:text-white"
               xmlns="http://www.w3.org/2000/svg"
