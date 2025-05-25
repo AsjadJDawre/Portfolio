@@ -14,30 +14,41 @@ const ProjectCard = ({
 }) => {
   // Determine layout class based on the index
   const layoutClass = index % 2 === 0 ? 'layout-even' : 'layout-odd';
+  
+  // Check if this is the AcademiaSuite image
+// List all images that need the special margin
+const specialImages = ['AcademiaSuite', 'volunteer-hub', 'TodoNest'];
+
+// Check if current image matches any in the list
+const needsMargin = specialImages.some(name => 
+  imageSrc.includes(name) || 
+  imageAlt.includes(name) || 
+  title.includes(name)
+);
+
 
   return (
-    <div className={`   relative  flex flex-col ${layoutClass === 'layout-even' ? 'sm:flex-row' : 'sm:flex-row-reverse'} gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 px-4 sm:px-8`}>
-      {/* Horizontal Line from Image */}
-            {/* Vertical Line (Add New Block Here) */}
-<div
-  className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-0 bottom-0 w-[1px] z-0`}
-  style={{
-    backgroundColor: themeAccentColor, // Vertical line color
-    transform: layoutClass === 'layout-even' ? 'translateX(-50%)' : 'translateX(50%)',
-  }}
-></div>
+    <div className={`relative flex flex-col ${layoutClass === 'layout-even' ? 'sm:flex-row' : 'sm:flex-row-reverse'} gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 px-4 sm:px-8`}>
+      {/* Vertical Line */}
+      <div
+        className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-0 bottom-0 w-[1px] z-0`}
+        style={{
+          backgroundColor: themeAccentColor,
+          transform: layoutClass === 'layout-even' ? 'translateX(-50%)' : 'translateX(50%)',
+        }}
+      ></div>
+      
+      {/* Horizontal Line */}
       <div
         className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 h-[1px] z-0`}
         style={{
-          backgroundColor: themeAccentColor,  // Use inline style for dynamic background color
+          backgroundColor: themeAccentColor,
           width: 'calc(35% - 3rem)',
           left: layoutClass === 'layout-even' ? 'calc(50% - 3rem)' : 'auto',
           right: layoutClass === 'layout-even' ? 'auto' : 'calc(50% - 3rem)',
           transform: layoutClass === 'layout-even' ? 'translateX(-88%)' : 'translateX(88%)'
         }}
       ></div>
-
-
 
       {/* Separator Dot */}
       <div
@@ -51,13 +62,13 @@ const ProjectCard = ({
       {/* Image Section */}
       <a
         href={link}
-        className="flex w-full relative justify-center sm:justify-start group"
+        className={`flex w-full relative justify-center sm:justify-start group`}
         target="_blank"
       >
         <div className={`flex flex-col items-center relative ${layoutClass === 'layout-odd' ? 'ml-[5rem]' : ''}`}>
           <div className="relative w-full max-w-[400px] p-4 group-hover:scale-105 transition-transform duration-200 ease-in-out">
             <img
-              className="w-full h-auto drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+              className={`w-full h-auto drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)] ${needsMargin ? 'special-academia-style' : ''}`}
               src={imageSrc}
               alt={imageAlt}
             />

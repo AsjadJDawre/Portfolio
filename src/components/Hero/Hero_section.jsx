@@ -53,10 +53,9 @@ function Hero_section({onButtonClick,onButtonClick2,showAboutMe}) {
   x="0px" 
   y="0px" 
   width="44"  
-  className="absolute"  
   height="44" 
   viewBox="0 0 100 100"
-class="absolute top-1/2 -translate-y-1/2 -right-6 group-hover:-right-9  ease-in-out duration-100"
+className="absolute top-1/2 -translate-y-1/2 -right-6 group-hover:-right-9  ease-in-out duration-100"
 >
   <g transform="translate(0,-952.36218)">
     <path 

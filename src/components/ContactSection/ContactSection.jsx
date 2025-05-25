@@ -88,7 +88,6 @@ const ContactSection = forwardRef((props, ref) => {
         const storedUser = localStorage.getItem('authUser');
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser);
-            console.log(parsedUser);
             setUser(parsedUser);
             setIsAuthenticatedLocal(true);
             dispatch(setIsAuthenticated({ user: parsedUser.email, value: true }));

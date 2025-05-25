@@ -5,7 +5,7 @@ import {toast} from 'react-hot-toast';
 const ResumeSection = () => {
   const obj = useSelector((state) => state.IsAuthenticated);
   const isAuthenticated = obj.value
-  console.log(obj);
+  // console.log(obj);
   const authUser = JSON.parse(localStorage.getItem('authUser'));
 
   const checkAuth = () => {
@@ -20,7 +20,7 @@ const ResumeSection = () => {
   const handleClick = () => {
     if (checkAuth()) {
       setTimeout(() => {
-        window.open(`${resume_link}`, '_blank');
+        window.open(resume_link, '_blank');
       }, 3000);
     
       toast.custom((t) => (
