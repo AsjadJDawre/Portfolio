@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react';
 import Name_Logo from '../Name_logo/Name_Logo';
 import '../../Hero_section.css'
 import AboutMe from '../AboutMe/AboutME'
+import Links from '../Links/Links.jsx';
   const MatterAnimation= lazy(() => import ('../../MatterAnimation.jsx'));
 
 function Hero_section({onButtonClick,onButtonClick2,showAboutMe}) {
@@ -79,8 +80,8 @@ className="absolute top-1/2 -translate-y-1/2 -right-6 group-hover:-right-9  ease
 
             
         </div>
-
-      <ul className='absolute right-0 text-[#b0b2c3]  transform -translate-y-1/2 flex flex-col space-y-6 p-4 top-72'>
+{/* <Links /> */}
+      {/* <ul className='absolute right-0 text-[#b0b2c3]  transform -translate-y-1/2 flex flex-col space-y-6 p-4 top-72'>
         <li>
           <a href="https://github.com/AsjadJDawre/" target="_blank" rel="noopener noreferrer">
             <svg className='w-7  hover:text-white h-7' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -109,7 +110,7 @@ className="absolute top-1/2 -translate-y-1/2 -right-6 group-hover:-right-9  ease
             </svg>
           </a>
         </li>
-      </ul>
+      </ul> */}
       <div className='flex-1 text-center'>
 
       </div>

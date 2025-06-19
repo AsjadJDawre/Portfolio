@@ -1,7 +1,8 @@
-import React from 'react';
-
+import React from 'react'
 const Footer = () => {
   return (
+<>
+         
     <footer className="flex flex-col items-center pb-10">
       <p className="text-lg text-gray-300">Asjad Johar Dawre © 2024</p>
       <div className="black-logo my-4 hover:">
@@ -83,6 +84,7 @@ const Footer = () => {
         </li>
       </ul>
     </footer>
+      </>
   );
 };
 

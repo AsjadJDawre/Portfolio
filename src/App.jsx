@@ -7,7 +7,8 @@ import ResumeSection from './components/Resume/Resume';
 import ContactSection from './components/ContactSection/ContactSection';
 import Footer from './Footer/Footer';
 import AboutMe from './components/AboutMe/AboutME';
-// import Test from './components/AboutMe/test';
+
+import { ThemeProvider } from './components/Theme/ThemeContext';// import Test from './components/AboutMe/test';
 
 function App() {
   const contactRef = useRef(null);
@@ -34,7 +35,8 @@ const handleBtnClick2 = () => {
 
   return (
     <>
- 
+   <ThemeProvider>
+
       <div className='text-white '>
         <Header  onButtonClick3={handleBtnClick2}/>
         {showAboutMe &&(<AboutMe closebtn={closebtn}/>)}
@@ -49,6 +51,8 @@ const handleBtnClick2 = () => {
       <ResumeSection/>
       <ContactSection ref={contactRef2} />
       <Footer/>
+        </ThemeProvider>
+
     </>
   );
 }

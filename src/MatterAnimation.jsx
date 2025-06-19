@@ -180,6 +180,7 @@ const MatterAnimation = () => {
     <div
       ref={containerRef}
       style={{
+        top:'10%',
         width: '100%',
         height: '100vh',
         position: 'relative',

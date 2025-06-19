@@ -3,7 +3,7 @@ import React from 'react'
 function Name_Logo() {
   return (
 <>
-<div className="absolute top-[239px] w-[400px]  mt-8 md:w-[650px] left-1/2  -translate-y-1/3    -translate-x-1/2  ">
+<div className="absolute top-[255px] w-[400px]  mt-8 md:w-[650px] left-1/2  -translate-y-1/3    -translate-x-1/2  ">
 
 
 <svg  viewBox="0 0 406 368" fill="none" xmlns="http://www.w3.org/2000/svg">
