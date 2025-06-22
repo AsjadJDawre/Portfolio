@@ -11,7 +11,7 @@ function Header({ onButtonClick3 }) {
   const [showExplanation, setShowExplanation] = useState(false);
   const [explanation, setExplanation] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const funnyResponses = [
     "Hmm... still sus. 👀",
     "You must be from the light side of the force. 🌞",
@@ -84,17 +84,64 @@ function Header({ onButtonClick3 }) {
 
   return (
     <>
-      <div className={`w-full fixed top-0 left-0 right-0 z-50 backdrop-blur-md ${darkMode ? 'bg-black/80 border-b border-gray-800' : 'bg-white/90 border-b border-gray-200'}`}>
+      <div className={`w-full fixed top-0 left-0 right-0 z-50 backdrop-blur-md ${darkMode ? 'bg-black/80 border-b border-gray-800' : ''}`}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
 <div className="relative flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <NameWhiteLogo darkMode={darkMode} />
             </div>
 
-  <div className="absolute left-1/2 transform -translate-x-1/2">
-    <Links darkMode={darkMode} />
-  </div>
+<div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-auto pt-1 pb-2 px-3]">
+  <Links darkMode={darkMode} />
+</div>
 
+{/* Mobile Hamburger Icon */}
+<div className="md:hidden relative">
+  <button
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+    className="text-gray-400 hover:text-white focus:outline-none"
+  >
+    <svg
+      className="h-6 w-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+{isMenuOpen && (
+  <>
+{/* Backdrop */}
+    <div
+      className="fixed inset-0 bg-black/50 z-40"
+      onClick={() => setIsMenuOpen(false)}
+    />
+
+    {/* Popup Container */}
+    <div className="fixed top-[140%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                    p-4 rounded-lg shadow-xl z-50 w-[300px]
+                    bg-white dark:bg-gray-900 border dark:border-gray-700
+                    transition-all duration-300 ease-out animate-popup">
+
+      {/* Close Button */}
+      <div className="flex justify-end mb-2">
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="text-sm px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+        >
+          Close
+        </button>
+      </div>
+
+      {/* Social Icons */}
+      <Links darkMode={darkMode} isMobilePopup={true} />
+    </div>
+  </>
+)}
+</div>
               {/* 🌞 Theme Toggle Button */}
   {/* Right-side group: Sun, WhatsApp, Phone */}
 <div className="flex items-center space-x-4">
@@ -174,6 +221,9 @@ function Header({ onButtonClick3 }) {
 
           </div>
         </div>
+        {/* Mobile Links Dropdown */}
+
+
       {/* </div> */}
 
       {/* Explanation Form */}

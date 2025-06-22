@@ -2,8 +2,6 @@ import { Suspense,lazy } from 'react';
 import React, { useState,useEffect } from 'react';
 import Name_Logo from '../Name_logo/Name_Logo';
 import '../../Hero_section.css'
-import AboutMe from '../AboutMe/AboutME'
-import Links from '../Links/Links.jsx';
   const MatterAnimation= lazy(() => import ('../../MatterAnimation.jsx'));
 
 function Hero_section({onButtonClick,onButtonClick2,showAboutMe}) {
