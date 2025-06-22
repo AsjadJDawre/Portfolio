@@ -9,6 +9,18 @@ import AcademiaSuite from "../../assets/images/AcademiaSuite.png";
 
 const Project_show = forwardRef((props, ref) => {
   const projects = [
+       
+    {
+      title: 'Refill Buddy',
+      subtitle: '(Gas Cylinder Refill Management System)',
+      description: 'Developed a web application to streamline gas cylinder refill bookings, integrating features such as secure authentication, quota tracking, payment gateway (Razorpay), and admin tools for request approvals and notices. Implemented a user-friendly dashboard for booking history and real-time status tracking.',
+      imageSrc: refillBuddyImage,
+      imageAlt: 'Refill Buddy - Gas Cylinder Refill Management',
+      link: 'https://frontend-rb.onrender.com', 
+      tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay'],
+      themeColor: '#ff9800',
+      themeAccentColor: '#f57c00'
+    },
     {
       title: 'E-Gram Panchayat',
       subtitle: '(Digital Village Administration Solution)',
@@ -23,7 +35,10 @@ const Project_show = forwardRef((props, ref) => {
     },
     
   
-    {
+    
+ 
+,    
+{
       title: 'AcademiaSuite',
       subtitle: '(Desktop Application)',
       description: 'Developing a desktop application using Electron.js and React for efficient management of academic processes. Features include real-time validation and DBF to Excel conversion.',
@@ -34,19 +49,6 @@ const Project_show = forwardRef((props, ref) => {
       themeColor: '#47afa1',
       themeAccentColor: '#1788ae'
     },
-    
-    {
-      title: 'Refill Buddy',
-      subtitle: '(Gas Cylinder Refill Management System)',
-      description: 'Developed a web application to streamline gas cylinder refill bookings, integrating features such as secure authentication, quota tracking, payment gateway (Razorpay), and admin tools for request approvals and notices. Implemented a user-friendly dashboard for booking history and real-time status tracking.',
-      imageSrc: refillBuddyImage,
-      imageAlt: 'Refill Buddy - Gas Cylinder Refill Management',
-      link: 'https://frontend-rb.onrender.com', 
-      tags: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay'],
-      themeColor: '#ff9800',
-      themeAccentColor: '#f57c00'
-    }
-,    
     {
       title: 'Volunteer Hub for NSS',
       subtitle: '(Management Solution)',
