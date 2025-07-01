@@ -9,6 +9,9 @@ import Footer from './Footer/Footer';
 import AboutMe from './components/AboutMe/AboutME';
 
 import { ThemeProvider } from './components/Theme/ThemeContext';// import Test from './components/AboutMe/test';
+// import SkillCarousel from './components/Skills/SkillSlider';
+import SkillsCarousel from './components/Skills/SkillsCarousel'
+import SkillCarousel from './components/Skills/SkillSlider'
 
 function App() {
   const contactRef = useRef(null);
@@ -48,6 +51,9 @@ const handleBtnClick2 = () => {
 
         <Project_show ref={contactRef}/>
       </div>
+
+{/* <SkillCarousel /> */}
+<SkillsCarousel />
       <ResumeSection/>
       <ContactSection ref={contactRef2} />
       <Footer/>
