@@ -43,9 +43,9 @@ const SkillsCarousel = () => {
       icon: '/images/express-js-logo.png',
       invert: false,
      glow: 'light',
-  colorClass: 'text-gray-200', // Soft white text
-  bgClass: 'bg-gray-800/50',  // Dark grey background
-  ringClass: 'ring-gray-400/30' // Light grey ring
+    colorClass: 'text-gray-200', // Soft white text
+    bgClass: 'bg-gray-200',  // Dark grey background
+    ringClass: 'ring-gray-400/30' // Light grey ring
 
     },
     {
