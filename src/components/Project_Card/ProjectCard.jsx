@@ -11,115 +11,129 @@ const ProjectCard = ({
   tags = [],
   themeColor,
   themeAccentColor,
+  darkMode
 }) => {
-  // Determine layout class based on the index
-  const layoutClass = index % 2 === 0 ? 'layout-even' : 'layout-odd';
-  
-  // Check if this is the AcademiaSuite image
-// List all images that need the special margin
-const specialImages = ['AcademiaSuite', 'volunteer-hub', 'TodoNest'];
+  // Determine if special margin is needed
+  const specialImages = ['AcademiaSuite', 'volunteer-hub', 'TodoNest'];
+  const needsMargin = specialImages.some(name => 
+    imageSrc.includes(name) || 
+    imageAlt.includes(name) || 
+    title.includes(name)
+  );
 
-// Check if current image matches any in the list
-const needsMargin = specialImages.some(name => 
-  imageSrc.includes(name) || 
-  imageAlt.includes(name) || 
-  title.includes(name)
-);
-
+  // Theme-specific styles
+const cardBg = darkMode ? 'bg-gray-800' : 'bg-amber-50';
+const cardBorder = darkMode ? 'border-gray-700' : 'border-amber-200';
+const textPrimary = darkMode ? 'text-gray-100' : 'text-gray-800';
+const textSecondary = darkMode ? 'text-gray-300' : 'text-gray-600';
+const textTertiary = darkMode ? 'text-gray-400' : 'text-gray-500';
+const overlayBg = darkMode ? 'from-black/70' : 'from-black/60';
 
   return (
-    <div className={`relative flex flex-col ${layoutClass === 'layout-even' ? 'sm:flex-row' : 'sm:flex-row-reverse'} gap-4 mt-12 sm:gap-[80px] items-center sm:mt-20 px-4 sm:px-8`}>
-      {/* Vertical Line */}
-      <div
-        className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-0 bottom-0 w-[1px] z-0`}
+    <div className={`relative flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 my-16 lg:my-24 items-center group`}>
+      {/* Timeline Elements */}
+      <div className={`absolute hidden lg:block ${index % 2 === 0 ? 'left-1/2' : 'right-1/2'} top-0 bottom-0 w-1 z-0`}
         style={{
-          backgroundColor: themeAccentColor,
-          transform: layoutClass === 'layout-even' ? 'translateX(-50%)' : 'translateX(50%)',
-        }}
-      ></div>
+          background: `linear-gradient(to bottom, ${themeColor}, ${themeAccentColor})`,
+          transform: index % 2 === 0 ? 'translateX(-50%)' : 'translateX(50%)',
+        }}>
+      </div>
       
-      {/* Horizontal Line */}
-      <div
-        className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 h-[1px] z-0`}
+      {/* Project Node */}
+      <div className={`absolute hidden lg:block ${index % 2 === 0 ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 z-10`}
         style={{
-          backgroundColor: themeAccentColor,
-          width: 'calc(35% - 3rem)',
-          left: layoutClass === 'layout-even' ? 'calc(50% - 3rem)' : 'auto',
-          right: layoutClass === 'layout-even' ? 'auto' : 'calc(50% - 3rem)',
-          transform: layoutClass === 'layout-even' ? 'translateX(-88%)' : 'translateX(88%)'
-        }}
-      ></div>
-
-      {/* Separator Dot */}
-      <div
-        className={`absolute hidden sm:block ${layoutClass === 'layout-even' ? 'left-1/2' : 'right-1/2'} top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-[#111] z-10 hover:scale-110 ease-in-out duration-100`}
-        style={{
-          border: `3px solid ${themeColor}`, 
-          transform: layoutClass === 'layout-even' ? 'translateX(-50%) translateY(-50%)' : 'translateX(50%) translateY(-50%)'
-        }}
-      ></div>
+          transform: index % 2 === 0 ? 'translateX(-50%) translateY(-50%)' : 'translateX(50%) translateY(-50%)'
+        }}>
+        <div className={`w-6 h-6 rounded-full ${darkMode ? 'bg-gray-800' : 'bg-white'} border-4 animate-pulse`} 
+             style={{ borderColor: themeColor }}>
+        </div>
+      </div>
 
       {/* Image Section */}
-      <a
-        href={link}
-        className={`flex w-full relative justify-center sm:justify-start group`}
-        target="_blank"
-      >
-        <div className={`flex flex-col items-center relative ${layoutClass === 'layout-odd' ? 'ml-[5rem]' : ''}`}>
-          <div className="relative w-full max-w-[400px] p-4 group-hover:scale-105 transition-transform duration-200 ease-in-out">
+      <div className={`w-full lg:w-1/2 relative ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}>
+        <a href={link} target="_blank" rel="noopener noreferrer" className="block group">
+          <div className={`relative overflow-hidden rounded-xl shadow-2xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${darkMode ? 'ring-1 ring-gray-700' : ''}`}>
             <img
-              className={`w-full h-auto drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)] ${needsMargin ? 'special-academia-style' : ''}`}
+              className={`w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 ${needsMargin ? 'pt-4' : ''}`}
               src={imageSrc}
               alt={imageAlt}
             />
-            <span
-              className="absolute left-1/2 -translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base rounded text-white opacity-0 group-hover:opacity-100 group-hover:top-16 transition-all duration-300 ease-in-out whitespace-nowrap max-w-max flex items-center gap-1"
-              style={{
-                backgroundColor: themeColor,  
-              }}
-            >
-              {title}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="feather feather-external-link"
-              >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </span>
+            <div className={`absolute inset-0 bg-gradient-to-t ${overlayBg} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6`}>
+              <div>
+                <h3 className="text-white text-xl font-bold">{title}</h3>
+                <p className="text-white/90 text-sm mt-1">{subtitle}</p>
+                <div className="flex mt-2">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/20">
+                    View Project
+                    <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
-      {/* Description Section */}
-      <div className={`w-full ${layoutClass === 'layout-even' ? 'order-2 sm:order-1' : 'order-1 sm:order-2'}`}>
-        <h3 className="font-bold text-2xl md:text-4xl" style={{ color: themeColor }}>
-          {title}
-        </h3>
-        <span className="text-base md:text-lg" style={{ color: themeColor }}>
-          {subtitle}
-        </span>
-        <p className="text-justify text-sm md:text-base mt-2">{description}</p>
-        <ul className="flex flex-wrap gap-2 mt-2">
-          {tags.length > 0 &&
-            tags.map((tag, index) => (
-              <li
-                key={index}
-                className="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
-              >
-                #{tag}
-              </li>
-            ))}
-        </ul>
+      {/* Content Section */}
+      <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'}`}>
+        <div className={`${cardBg} p-6 rounded-xl shadow-lg border ${cardBorder} transition-colors duration-300`}>
+          <div className="flex items-center mb-2">
+            <span className="inline-block w-3 h-3 rounded-full mr-2" style={{ backgroundColor: themeColor }}></span>
+            <span className={`text-sm font-medium ${textTertiary}`}>PROJECT {index + 1}</span>
+          </div>
+          <h3 className={`text-2xl md:text-3xl font-bold mb-1 ${textPrimary}`} style={{ color: themeColor }}>
+            {title}
+          </h3>
+          <h4 className={`text-lg md:text-xl mb-4 ${textSecondary}`}>
+            {subtitle}
+          </h4>
+          <p className={`${textSecondary} mb-4 leading-relaxed`}>
+            {description}
+          </p>
+          
+          <div className="mt-6">
+            <h5 className={`text-sm font-semibold ${textTertiary} mb-2`}>TECH STACK</h5>
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium"
+                  style={{
+                    backgroundColor: darkMode 
+                      ? `${themeColor}20` 
+                      : `${themeColor}10`,
+                    color: darkMode 
+                      ? `${themeAccentColor}` 
+                      : `${themeColor}`,
+                    border: `1px solid ${darkMode 
+                      ? `${themeColor}40` 
+                      : `${themeColor}30`}`
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <a 
+            href={link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center mt-6 px-4 py-2 rounded-md font-medium transition-colors hover:shadow-md"
+            style={{
+              backgroundColor: themeColor,
+              color: 'white',
+            }}
+          >
+            View Project
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   );
