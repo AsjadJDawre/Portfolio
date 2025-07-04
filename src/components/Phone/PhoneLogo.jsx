@@ -1,6 +1,6 @@
 import React ,{useEffect} from 'react';
 
-function PhoneLogo({ onButtonClick3 }) {
+function PhoneLogo({ onButtonClick3,darkMode }) {
   const handleClick = () => {
     // console.log('SVG clicked!'); // Asjad-> Debug to verify if the event reaches here
     onButtonClick3(); // Call the passed prop function
@@ -15,7 +15,7 @@ function PhoneLogo({ onButtonClick3 }) {
         width="24"
         height="24"
         viewBox="0 0 24 24"
-        fill="none"
+        fill= {darkMode ? '' : 'black'}
         stroke="#fff"
         strokeWidth="2"
         strokeLinecap="round"
