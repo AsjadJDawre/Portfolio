@@ -7,6 +7,7 @@ import ResumeSection from './components/Resume/Resume';
 import ContactSection from './components/ContactSection/ContactSection';
 import Footer from './Footer/Footer';
 import AboutMe from './components/AboutMe/AboutME';
+import { Analytics } from '@vercel/analytics/react';
 
 import { ThemeProvider } from './components/Theme/ThemeContext';// import Test from './components/AboutMe/test';
 // import SkillCarousel from './components/Skills/SkillSlider';
@@ -57,6 +58,7 @@ const handleBtnClick2 = () => {
       <ResumeSection/>
       <ContactSection ref={contactRef2} />
       <Footer/>
+      <Analytics />
         </ThemeProvider>
 
     </>
